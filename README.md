@@ -5,7 +5,7 @@ This repo serves as a short example on how the orion context broker can be used.
 - Python 3.12.9
 - Flask 3.1.0
 ## Chat-GPT: Introduction to FIWARE & Orion Context Broker  
-
+**This whole paragraph is genereated by chat-GPT** 
 ### FIWARE Overview  
 - **FIWARE** is an open-source platform for building smart applications.  
 - It provides **context management** capabilities, meaning it helps manage and share real-time data from various sources (IoT, applications, databases).  
@@ -18,14 +18,14 @@ This repo serves as a short example on how the orion context broker can be used.
 - Supports **subscriptions and notifications** to track changes in data.  
 
 ### Key Concepts & Nomenclature  
-- **Entity**: A digital representation of a real-world object (e.g., a room, sensor, or vehicle).  
+- **Entity**: A digital representation of a real-world object (e.g., a machine, sensor, or vehicle).  
 - **Attributes**: Properties of an entity (e.g., temperature, status, location).  
 - **Context**: The current state of an entity at a given time.  
 - **Subscription**: A mechanism to notify external services when data changes.  
 - **Context Provider**: A service that dynamically provides additional data when requested.  
 
 ### How Orion Works in Practice  
-1. **Register entities**: Define objects (e.g., "Room1" with temperature & humidity).  
+1. **Register entities**: Define objects (e.g., "Asset1" with temperature & power consumption).  
 2. **Update entities**: Change values dynamically (e.g., sensor data updates).  
 3. **Query context**: Fetch real-time data from Orion.  
 4. **Subscribe to changes**: Get notifications when specific values change.  
@@ -257,6 +257,9 @@ Press CTRL+C to quit
 
 # Feed data to Orion
 We are now ready to start feeding data to Orion using the NGSI-v2 standard.
+In this short example we simulate work order generated for wagon 9911.
+
+First the workorder is created when the wagon is in operation. XXYY is the current location along the line.
 
 ```bash
 curl -X PATCH 'http://localhost:1026/v2/entities/9911/attrs'   -H 'Content-Type: application/json'   -d '{
